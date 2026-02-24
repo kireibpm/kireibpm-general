@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="64" viewBox="0 0 260 64" role="img" aria-label="KireiBPM logo option 1">
+  <defs>
+    <style>
+      .word { font: 700 22px Arial, sans-serif; fill: #0b4361; }
+      .tag  { font: 700 12px Arial, sans-serif; fill: #0b4361; letter-spacing: 1.6px; }
+    </style>
+  </defs>
+
+  <!-- Mark: circle + sun (Japanese hint), clean geometry (no Bonita copying) -->
+  <g transform="translate(8,8)">
+    <circle cx="24" cy="24" r="24" fill="#0b4361"/>
+    <circle cx="24" cy="24" r="10" fill="#d03" opacity="0.95"/>
+    <!-- Simple K monogram -->
+    <path d="M18 14v20m0-10l12-10m-12 10l12 10" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="72" y="32" class="word">Kirei</text>
+  <text x="138" y="32" class="word">BPM</text>
+  <circle cx="128" cy="24" r="2.6" fill="#d03"/>
+
+  <text x="72" y="52" class="tag">UI DESIGNER</text>
+</svg>
