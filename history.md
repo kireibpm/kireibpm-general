@@ -6,3 +6,4 @@
 2026-02-22 Generate GPG and gpg --keyserver keys.openpgp.org --send-keys 2AC9C67FD7620B84
 2026-02-22 pierwszy deploy na https://central.sonatype.com/
 2026-02-24 Dokończony rebranding Studio: Bonita Studio -> Kirei Studio (UI labels/messages, produkt Eclipse), pełny build all-in-one SUCCESS, uruchomiony .app na macOS.
+2026-02-24 Utworzone repo https://github.com/kireibpm/kireibpm-general, przeniesione REBRANDING_NOTES.md + history.md + kireibpm-scripts, dodany chat_history.md (rekonstrukcja rozmów i decyzji).

@@ -116,3 +116,20 @@ To podejście celowo faworyzuje stabilność builda i kompatybilność Tycho/Ecl
 
 ### Referencja do commita
 - `kireibpm-studio`: commit `7bb9a05f4`.
+
+## 5) Konsolidacja dokumentacji i skryptów (2026-02-24)
+
+### Nowe repo pomocnicze
+- Utworzone repo: `kireibpm-general`.
+- Cel: centralizacja notatek roboczych i skryptów pomocniczych poza repo kodowym Studio.
+
+### Co przeniesiono
+- `REBRANDING_NOTES.md`
+- `history.md`
+- cały katalog `kireibpm-scripts`
+
+### Dodatkowa dokumentacja rozmów
+- Dodany plik `chat_history.md` zawierający rekonstrukcję rozmów i decyzji dotyczących rebrandingu z ostatnich dni (na podstawie dostępnego kontekstu roboczego, commitów i notatek).
+
+### Repo URL
+- `https://github.com/kireibpm/kireibpm-general`
