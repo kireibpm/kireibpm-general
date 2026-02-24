@@ -1,0 +1,37 @@
+Workflow scan report for org: kireibpm
+Generated: Sat Feb 21 16:03:13 CET 2026
+Root dir: ./kireibpm-org-clone
+
+CODEQL_AUTO_ENABLED (25):
+- kireibpm-actorfilter-custom-user-info
+- kireibpm-actorfilter-initiator
+- kireibpm-actorfilter-initiator-manager
+- kireibpm-actorfilter-same-task-user
+- kireibpm-actorfilter-single-user
+- kireibpm-actorfilter-user-manager
+- kireibpm-connector-ai
+- kireibpm-connector-cmis
+- kireibpm-connector-database
+- kireibpm-connector-document-converter
+- kireibpm-connector-document-templating
+- kireibpm-connector-email
+- kireibpm-connector-googlecalendar-V3
+- kireibpm-connector-groovy
+- kireibpm-connector-ldap
+- kireibpm-connector-rest
+- kireibpm-connector-salesforce
+- kireibpm-connector-sap
+- kireibpm-connector-shell-script
+- kireibpm-connector-twitter
+- kireibpm-connector-uipath
+- kireibpm-connector-webservice
+- kireibpm-java-client
+- kireibpm-process-model
+- kireibpm-project-maven-plugin
+
+CODEQL_MANUAL_ONLY (0):
+
+PURGE_ARTIFACTS_WORKFLOWS (3):
+- kireibpm-connector-archetype
+- kireibpm-rest-api-extension-archetype
+- kireibpm-theme-archetype
