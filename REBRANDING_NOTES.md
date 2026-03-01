@@ -133,3 +133,40 @@ To podejście celowo faworyzuje stabilność builda i kompatybilność Tycho/Ecl
 
 ### Repo URL
 - `https://github.com/kireibpm/kireibpm-general`
+
+## 6) Migracja cross-repo + publikacja release/1.0.0 (2026-03-01)
+
+### Cel tej rundy
+- Domknięcie rebrandingu zależności webowych (`org.bonitasoft.web` -> `org.kireibpm.web`) w obszarze UI Designer.
+- Przejście z wersji snapshot na stabilną wersję artifact-builder.
+- Ujednolicenie publikacji do organizacji `kireibpm` i dopięcie pushy na gałęzie `release/1.0.0`.
+
+### Najważniejsze działania
+- `kireibpm-ui-designer`:
+   - aktualizacja backendu do `ui-designer-artifact-builder.version = 1.0.10` (stabilna wersja),
+   - utrzymanie współrzędnych `org.kireibpm.web`,
+   - potwierdzony pełny build i brak zależności `org.bonitasoft.web:*` w dependency tree.
+- `ui-designer-artifact-builder`:
+   - przygotowanie stabilnej bazy z tagu `1.0.10`,
+   - migracja współrzędnych Maven do `org.kireibpm.web`,
+   - zmiana nazwy katalogu roboczego na `kireibpm-ui-designer-artifact-builder`,
+   - poprawa metadanych SCM/README/workflow pod organizację `kireibpm`.
+- `kireibpm-ui-designer` workflow:
+   - przełączenie odwołań z `bonitasoft/*` na `kireibpm/*` dla repo artifact-builder i akcji slack.
+
+### Repozytoria i publikacja
+- Utworzone nowe repo:
+   - `https://github.com/kireibpm/kireibpm-ui-designer-artifact-builder` (private).
+- Wypchnięte branche:
+   - `kireibpm-ui-designer-artifact-builder`: `release/1.0.0` (commit `2d69d30`),
+   - `kireibpm-ui-designer`: `release/1.0.0` (commit `776c6ca2`),
+   - `kireibpm-engine`: `release/1.0.0` (commit `8ab8a2c`).
+- Weryfikacja synchronizacji:
+   - `kireibpm-portal-js`: `release/1.0.0` zsynchronizowany (`6258ca1`),
+   - `kireibpm-ui-designer`: `release/1.0.0` zsynchronizowany (`776c6ca2`).
+
+### Różnice 1.0.9 vs 1.0.10 (artifact-builder)
+- Zakres zmian między tagami: 6 commitów, 22 pliki, `+230/-52`.
+- Zmiana funkcjonalna: poprawka `tabContainer` (kontrola lazy loading zakładek).
+- Pozostałe zmiany: i18n, workflowy CI, podbicia wersji.
+- W samych POM-ach różnice głównie wersyjne (`1.0.9 -> 1.0.10`), bez dużych zmian zależności runtime.
