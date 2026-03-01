@@ -80,3 +80,11 @@ Nie zawiera pełnych, surowych transcriptów starszych czatów spoza dostępnego
 - Potwierdzono, że:
   - `kireibpm-portal-js` jest zsynchronizowany na `release/1.0.0` (`6258ca1`),
   - `kireibpm-ui-designer` jest zsynchronizowany na `release/1.0.0` (`776c6ca2`).
+
+### 7) `kireibpm-js-components` — hardening i stabilizacja
+- Wykonano rebranding repo `bonita-js-components` -> `kireibpm-js-components` (metadane pakietu, README, docs/i18n).
+- Zrealizowano Stage 2: migracja testów z PhantomJS do ChromeHeadless (CI/local), baseline Node 20 oraz skrypty `test:ci` i `audit`.
+- Zrealizowano Stage 3: redukcja podatności przez kontrolowane `resolutions` i usunięcie `gulp-open`; końcowy wynik audytu: `low 27`, `moderate 40`, `high 58`, `critical 0`.
+- Potwierdzono stabilność: `yarn test:ci` przechodzi (`120/120 SUCCESS`).
+- Na decyzję użytkownika zatrzymano dalsze podbijanie zależności na obecnym, stabilnym poziomie.
+- Dokument `STAGE2_HARDENING.md` przeniesiono do repo `kireibpm-general` i odnotowano to w `history.md`.

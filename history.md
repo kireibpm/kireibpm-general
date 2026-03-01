@@ -11,3 +11,4 @@
 2026-03-01 W kireibpm-ui-designer przejście na stabilny artifact-builder 1.0.10 (bez snapshot), usunięcie zależności transitively wskazujących na org.bonitasoft.web.
 2026-03-01 Utworzone nowe repo: https://github.com/kireibpm/kireibpm-ui-designer-artifact-builder i wypchnięty branch release/1.0.0.
 2026-03-01 Wypchnięte branche release/1.0.0: kireibpm-ui-designer, kireibpm-portal-js, kireibpm-engine.
+2026-03-01 kireibpm-js-components: zakończony Stage 2 + Stage 3 hardening (testy 120/120, redukcja CVE do: low 27, moderate 40, high 58, critical 0); dokument STAGE2_HARDENING.md przeniesiony do kireibpm-general.
