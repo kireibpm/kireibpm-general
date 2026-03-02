@@ -23,3 +23,4 @@
 2026-03-02 kireibpm-engine: faza 3 migracji namespace, commit 620a0cd (8 plików fixtures/resources), finalnie old=7, new=32896; pozostałości celowe: BDM validator/test, plugin id, binarny fixture `.jar.bak`.
 2026-03-02 kireibpm-general: refaktoryzacja raportowania — `repo.md` uproszczony do tabelarycznego dashboardu stanu bieżącego, a historia zmian przenoszona do `history.md`.
 2026-03-02 globalny snapshot migracji namespace (54 repo): TODO=37, IN_PROGRESS=13, READY=0, NO_SIGNAL=4.
+2026-03-02 kireibpm-ui-designer: low-risk batch frontend, commit ff794247 — dodany alias `org.kireibpm.dragAndDrop -> org.bonitasoft.dragAndDrop` i przełączenie zależności aplikacji na nowy moduł; walidacja `frontend/npm test`: 737/737 SUCCESS; metryki tracked files: old=837, new=22.

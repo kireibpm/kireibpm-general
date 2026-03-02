@@ -25,7 +25,7 @@ Snapshot: 2026-03-02 (globalny skan tekstowy `kireibpm-org-clone`)
 |---|---|---:|---:|---|---|
 | kireibpm-studio | IN_PROGRESS | 41645 | 230 | 2026-03-02 | Największy wolumen legacy |
 | kireibpm-ui-designer-artifact-builder | IN_PROGRESS | 2268 | 19 | 2026-03-02 | Wymaga dedykowanej fali cleanup |
-| kireibpm-ui-designer | IN_PROGRESS | 837 | 19 | 2026-03-02 | Legacy nadal obecne w wielu obszarach |
+| kireibpm-ui-designer | IN_PROGRESS | 837 | 22 | 2026-03-02 | Frontend przełączony na `org.kireibpm.dragAndDrop` przez alias kompatybilności |
 | kireibpm-distrib | IN_PROGRESS | 63 | 21 | 2026-03-02 | Pośrednie artefakty dystrybucyjne |
 | kireibpm-web-pages | IN_PROGRESS | 57 | 32 | 2026-03-02 | Dużo danych historycznych |
 | kireibpm-artifacts-model | IN_PROGRESS | 30 | 1548 | 2026-03-02 | Przewaga nowych refs, zostały legacy |
