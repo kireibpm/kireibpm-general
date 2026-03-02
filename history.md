@@ -12,3 +12,6 @@
 2026-03-01 Utworzone nowe repo: https://github.com/kireibpm/kireibpm-ui-designer-artifact-builder i wypchnięty branch release/1.0.0.
 2026-03-01 Wypchnięte branche release/1.0.0: kireibpm-ui-designer, kireibpm-portal-js, kireibpm-engine.
 2026-03-01 kireibpm-js-components: zakończony Stage 2 + Stage 3 hardening (testy 120/120, redukcja CVE do: low 27, moderate 40, high 58, critical 0); dokument STAGE2_HARDENING.md przeniesiony do kireibpm-general.
+2026-03-02 kireibpm-engine: seria migracji namespace i cleanup legacy refs na release/1.0.0 (commity: d02506d, e39f4ff, 2ccc22d, 7bc8c5d, 620a0cd), z walidacją testów i build SUCCESS.
+2026-03-02 kireibpm-engine: redukcja legacy referencji w plikach śledzonych przez git do old=7 (new=32896); pozostałe wpisy celowe (BDM validator/test, plugin id, binarny fixture).
+2026-03-02 kireibpm-general: aktualizacje dashboardu migracji w repo.md (commity: 5d53a5b, 7e3a45d, 7ccab02).
