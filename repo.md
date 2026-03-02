@@ -63,6 +63,15 @@ Aktualizacja: 2026-03-02
    - new refs (`org.kireibpm|com.kireibpm`): **32886**
 - Walidacja: celowane testy po `7bc8c5d` przeszły (`SchedulerQueryTest`, `HttpAPIServletCallTest`), a pełny build engine pozostaje zielony.
 
+### Update 2026-03-02 (punktowo: kireibpm-engine, faza 3)
+
+- Wypchnięty commit na `kireibpm-engine/release/1.0.0`: `620a0cd`
+- Zakres: redukcja legacy referencji w test fixtures/resources (8 plików), m.in. BDM generator test resources, `persistence.xml`, `logback-test.xml`, komentarz testowy w `portal_fr.po`
+- Efekt mierzalny (pliki śledzone przez git, stan bieżący):
+   - old refs (`org.bonitasoft|com.bonitasoft`): **7**
+   - new refs (`org.kireibpm|com.kireibpm`): **32896**
+- Pozostałe 7 legacy wpisów są celowe (validator BDM + test, plugin id, binarny fixture `.jar.bak`).
+
 ### NO_SIGNAL (3)
 
 - `kireibpm-action-release-connector`
