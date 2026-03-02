@@ -18,3 +18,8 @@
 2026-03-02 kireibpm-portal-js: low-risk migracja namespace w custom page `user-tasks-list` + alias kompatybilności, commit e8a8b9f (old: 16→12, new: 372→378, `npm test` 698/698 SUCCESS).
 2026-03-02 kireibpm-portal-js: faza 2 migracji custom page na moduły `org.kireibpm.*`, commit 8468800 (old: 12→1, new: 378→389, `npm test` 698/698 SUCCESS).
 2026-03-02 Git task (follow-up): usunąć alias `org.bonitasoft.portal -> org.kireibpm.portal` po 1-2 wydaniach, po potwierdzeniu braku legacy wywołań.
+2026-03-02 kireibpm-engine: faza 1 migracji namespace, commit d02506d (`TestConnector*` IDs: `org.bonitasoft.connector.*` -> `org.kireibpm.connector.*`, 15 plików resources); metryki old 87→63, new 32813→32837, pełny build SUCCESS.
+2026-03-02 kireibpm-engine: faza 2 migracji namespace, commity e39f4ff + 2ccc22d + 7bc8c5d (cleanup platform setup + test fixtures + API tests namespace + README policy `com.kireibpm`), celowane testy i build zielone.
+2026-03-02 kireibpm-engine: faza 3 migracji namespace, commit 620a0cd (8 plików fixtures/resources), finalnie old=7, new=32896; pozostałości celowe: BDM validator/test, plugin id, binarny fixture `.jar.bak`.
+2026-03-02 kireibpm-general: refaktoryzacja raportowania — `repo.md` uproszczony do tabelarycznego dashboardu stanu bieżącego, a historia zmian przenoszona do `history.md`.
+2026-03-02 globalny snapshot migracji namespace (54 repo): TODO=37, IN_PROGRESS=13, READY=0, NO_SIGNAL=4.
