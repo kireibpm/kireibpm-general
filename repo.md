@@ -82,6 +82,16 @@ Aktualizacja: 2026-03-02
 - Walidacja: `npm test` zakończone sukcesem (`698/698 SUCCESS`).
 - Pozostałe legacy wpisy w source są celowe: to nazwy zewnętrznych modułów Angular dostarczanych przez vendor bundle (`bonita-js-components/dist/bonita-lib-tpl.min.js`) i mapowanych przez `custom-pages/user-tasks-list/gulp/conf.js`.
 
+### Update 2026-03-02 (punktowo: kireibpm-portal-js, faza 2)
+
+- Wypchnięty commit na `kireibpm-portal-js/release/1.0.0`: `8468800`
+- Zakres: przejście custom page `user-tasks-list` na moduły Angular `org.kireibpm.*` zgodne z aktualnym `kireibpm-js-components` + regeneracja builda custom page.
+- Efekt mierzalny (pliki śledzone przez git, bez `dist/build/target/node_modules`):
+   - old refs (`org.bonitasoft|com.bonitasoft`): **12 → 1**
+   - new refs (`org.kireibpm|com.kireibpm`): **378 → 389**
+- Walidacja: `npm test` zakończone sukcesem (`698/698 SUCCESS`).
+- Pozostały 1 wpis legacy jest celowy: alias kompatybilności `org.bonitasoft.portal -> org.kireibpm.portal`.
+
 ### NO_SIGNAL (3)
 
 - `kireibpm-action-release-connector`
@@ -145,6 +155,9 @@ Aktualizacja: 2026-03-02
 4. **Wyrównanie metadanych i zależności**
    - plugin IDs, maven/gradle coordinates, github URLs, CI workflows
    - usunąć pozostałe odwołania do `bonitasoft/*` tam, gdzie nie są celowo utrzymywane dla kompatybilności
+
+5. **Git task (follow-up kompatybilności)**
+   - `kireibpm-portal-js`: usunąć alias `org.bonitasoft.portal -> org.kireibpm.portal` po **1-2 wydaniach** (po potwierdzeniu braku legacy wywołań w deploymentach i cache frontowych)
 
 ## Uwagi do metodologii
 
