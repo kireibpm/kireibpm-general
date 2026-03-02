@@ -43,7 +43,7 @@ Aktualizacja: 2026-03-02
 - `kireibpm-application-directory` (old=2, new=20)
 - `kireibpm-user-application` (old=2, new=16)
 
-### Update 2026-03-02 (punktowo: kireibpm-engine)
+### Update 2026-03-02 (punktowo: kireibpm-engine, faza 1)
 
 - Wypchnięty commit: `d02506d` na `kireibpm-engine/release/1.0.0`
 - Zakres: migracja testowych connector IDs (`TestConnector*`) z `org.bonitasoft.connector.*` do `org.kireibpm.connector.*` (15 plików resources)
@@ -51,6 +51,17 @@ Aktualizacja: 2026-03-02
    - old refs (`org.bonitasoft|com.bonitasoft`): **87 → 63**
    - new refs (`org.kireibpm|com.kireibpm`): **32813 → 32837**
 - Walidacja: pełny build `kireibpm-engine` przeszedł (`./gradlew build --no-daemon`, BUILD SUCCESSFUL)
+
+### Update 2026-03-02 (punktowo: kireibpm-engine, faza 2)
+
+- Wypchnięte commity na `kireibpm-engine/release/1.0.0`:
+   - `e39f4ff` — cleanup legacy referencji w `platform/platform-setup` (setenv, test `bonita.xml`, e2e script)
+   - `2ccc22d` — kolejna redukcja legacy referencji w testach/fixture (17 plików)
+   - `7bc8c5d` — normalizacja API test namespace na `org.kireibpm` + dopisanie noty w README, dlaczego część fixture/BDM zostaje na `com.kireibpm`
+- Efekt mierzalny (pliki śledzone przez git, stan bieżący):
+   - old refs (`org.bonitasoft|com.bonitasoft`): **17**
+   - new refs (`org.kireibpm|com.kireibpm`): **32886**
+- Walidacja: celowane testy po `7bc8c5d` przeszły (`SchedulerQueryTest`, `HttpAPIServletCallTest`), a pełny build engine pozostaje zielony.
 
 ### NO_SIGNAL (3)
 
