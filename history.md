@@ -24,3 +24,4 @@
 2026-03-02 kireibpm-general: refaktoryzacja raportowania — `repo.md` uproszczony do tabelarycznego dashboardu stanu bieżącego, a historia zmian przenoszona do `history.md`.
 2026-03-02 globalny snapshot migracji namespace (54 repo): TODO=37, IN_PROGRESS=13, READY=0, NO_SIGNAL=4.
 2026-03-02 kireibpm-ui-designer: low-risk batch frontend, commit ff794247 — dodany alias `org.kireibpm.dragAndDrop -> org.bonitasoft.dragAndDrop` i przełączenie zależności aplikacji na nowy moduł; walidacja `frontend/npm test`: 737/737 SUCCESS; metryki tracked files: old=837, new=22.
+2026-03-02 kireibpm-ui-designer: batch backend, commit 5149078e — migracja pakietu `org.bonitasoft.web.designer.model.contract` do `org.kireibpm.web.designer.model.contract` (55 plików, w tym relokacja katalogów + aktualizacja importów `backend/webapp`); walidacja `./mvnw -pl backend/contract,backend/webapp -DskipITs test`: BUILD SUCCESS (374 testy); metryki tracked files: old=665, new=194.
