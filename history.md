@@ -15,3 +15,4 @@
 2026-03-02 kireibpm-engine: seria migracji namespace i cleanup legacy refs na release/1.0.0 (commity: d02506d, e39f4ff, 2ccc22d, 7bc8c5d, 620a0cd), z walidacją testów i build SUCCESS.
 2026-03-02 kireibpm-engine: redukcja legacy referencji w plikach śledzonych przez git do old=7 (new=32896); pozostałe wpisy celowe (BDM validator/test, plugin id, binarny fixture).
 2026-03-02 kireibpm-general: aktualizacje dashboardu migracji w repo.md (commity: 5d53a5b, 7e3a45d, 7ccab02).
+2026-03-02 kireibpm-portal-js: low-risk migracja namespace w custom page `user-tasks-list` + alias kompatybilności, commit e8a8b9f (old: 16→12, new: 372→378, `npm test` 698/698 SUCCESS).

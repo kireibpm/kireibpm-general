@@ -72,6 +72,16 @@ Aktualizacja: 2026-03-02
    - new refs (`org.kireibpm|com.kireibpm`): **32896**
 - Pozostałe 7 legacy wpisów są celowe (validator BDM + test, plugin id, binarny fixture `.jar.bak`).
 
+### Update 2026-03-02 (punktowo: kireibpm-portal-js, faza 1)
+
+- Wypchnięty commit na `kireibpm-portal-js/release/1.0.0`: `e8a8b9f`
+- Zakres: low-risk cleanup w custom page `user-tasks-list` + alias kompatybilności (`org.bonitasoft.portal` -> `org.kireibpm.portal`) oraz aktualizacja legacy string w `dateI18n` + testu.
+- Efekt mierzalny (pliki śledzone przez git, bez `dist/build/target/node_modules`):
+   - old refs (`org.bonitasoft|com.bonitasoft`): **16 → 12**
+   - new refs (`org.kireibpm|com.kireibpm`): **372 → 378**
+- Walidacja: `npm test` zakończone sukcesem (`698/698 SUCCESS`).
+- Pozostałe legacy wpisy w source są celowe: to nazwy zewnętrznych modułów Angular dostarczanych przez vendor bundle (`bonita-js-components/dist/bonita-lib-tpl.min.js`) i mapowanych przez `custom-pages/user-tasks-list/gulp/conf.js`.
+
 ### NO_SIGNAL (3)
 
 - `kireibpm-action-release-connector`
