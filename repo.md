@@ -24,7 +24,7 @@ Snapshot: 2026-03-02 (globalny skan tekstowy `kireibpm-org-clone`)
 | Repo | Status | Old | New | Last updated | Notes |
 |---|---|---:|---:|---|---|
 | kireibpm-studio | IN_PROGRESS | 41645 | 230 | 2026-03-02 | Największy wolumen legacy |
-| kireibpm-ui-designer-artifact-builder | IN_PROGRESS | 2268 | 19 | 2026-03-02 | Wymaga dedykowanej fali cleanup |
+| kireibpm-ui-designer-artifact-builder | IN_PROGRESS | 2261 | 26 | 2026-03-02 | Start migracji: testowy batch `artifact-builder` (`utils`/`utils.rule`) do `org.kireibpm` |
 | kireibpm-ui-designer | IN_PROGRESS | 642 | 217 | 2026-03-02 | Frontend alias + migracja backend `model.contract` + testowy batch `webapp` (`assertions`/`utils` imports) do `org.kireibpm` |
 | kireibpm-distrib | IN_PROGRESS | 63 | 21 | 2026-03-02 | Pośrednie artefakty dystrybucyjne |
 | kireibpm-web-pages | IN_PROGRESS | 57 | 32 | 2026-03-02 | Dużo danych historycznych |
