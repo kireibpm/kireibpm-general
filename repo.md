@@ -78,6 +78,12 @@ Snapshot: 2026-03-02 (globalny skan tekstowy `kireibpm-org-clone`)
 | kireibpm-widget-builder | NO_SIGNAL | 0 | 0 | 2026-03-02 | Brak sygnału tekstowego |
 | kireibpm-widget-contrib | NO_SIGNAL | 0 | 0 | 2026-03-02 | Brak sygnału tekstowego |
 
+## Repo poza sygnałem namespace
+
+| Repo | Last updated | Notes |
+|---|---|---|
+| kireibpm-web-components | 2026-03-12 | Repo nie uczestniczy w dashboardzie migracji namespace (`old/new` nie daje sensownego sygnału), ale w dniach 2026-03-11/12 domknięto fork operacyjnie: licencje `GPL-2.0-or-later`, działający workflow Crowdin z `KIREIBPM_CI_PAT`, repo-local workaround npm na TLS interception oraz przygotowany bezpieczny wariant CA + odświeżony flow publikacji npm dla `@kireibpm/search-box`, `@kireibpm/pagination-selector`, `@kireibpm/query-selector`. |
+
 ## Metodyka
 
 - Dashboard jest oparty o skan tekstowy (`org\.bonitasoft|com\.bonitasoft` vs `org\.kireibpm|com\.kireibpm`).
