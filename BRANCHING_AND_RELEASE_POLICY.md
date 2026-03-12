@@ -7,21 +7,21 @@ This document defines the default branching, pull request, versioning, tagging, 
 ## Core Principles
 
 1. Use the same workflow across all KireiBPM repositories.
-2. Keep `master` always releasable.
-3. Release from `master` only.
+2. Keep `main` always releasable.
+3. Release from `main` only.
 4. Use GitHub Issues as the default work tracker.
 5. Keep one shared platform line for `MAJOR.MINOR`.
 6. Allow `PATCH` to increase independently per repository or per published package.
 
 ## Primary Branch
 
-KireiBPM uses `master` as the primary branch.
+KireiBPM uses `main` as the primary branch.
 
 Rules:
 
-- `master` contains the current development state.
-- `master` should remain stable enough to release at any time.
-- Direct pushes to `master` should be avoided in normal work.
+- `main` contains the current development state.
+- `main` should remain stable enough to release at any time.
+- Direct pushes to `main` should be avoided in normal work.
 - Changes should normally arrive through pull requests.
 
 ## Working Branches
@@ -67,7 +67,7 @@ Rules:
 Recommended rules:
 
 - Open a pull request for every feature or fix branch.
-- Merge into `master` only after required checks pass.
+- Merge into `main` only after required checks pass.
 - Use `Squash and merge` as the default merge strategy.
 - Keep pull requests focused on one topic.
 - Enable automatic deletion of the source branch after merge.
@@ -76,8 +76,8 @@ Recommended rules:
 
 Available GitHub merge strategies:
 
-- `Create a merge commit`: keeps the full branch history, but makes `master` noisier.
-- `Squash and merge`: collapses the branch into one clean commit on `master`.
+- `Create a merge commit`: keeps the full branch history, but makes `main` noisier.
+- `Squash and merge`: collapses the branch into one clean commit on `main`.
 - `Rebase and merge`: keeps a linear history, but preserves all branch commits individually.
 
 Default recommendation for KireiBPM:
@@ -89,7 +89,7 @@ Reason:
 - branches are short-lived,
 - source branches are deleted after merge,
 - one PR usually represents one logical change,
-- `master` stays clean and readable.
+- `main` stays clean and readable.
 
 ## Versioning Policy
 
@@ -147,13 +147,13 @@ Examples:
 
 ## Release Policy
 
-Releases should be created only from `master`.
+Releases should be created only from `main`.
 
 Recommended flow:
 
 1. Work happens on `feature/*` or `fix/*`.
-2. Changes are reviewed and merged into `master`.
-3. `master` becomes the source of truth for release.
+2. Changes are reviewed and merged into `main`.
+3. `main` becomes the source of truth for release.
 4. A release workflow or manual release process creates the version bump and tag.
 5. Published artifacts are produced from the tagged state.
 
@@ -172,16 +172,16 @@ This is especially appropriate for repositories that publish external artifacts 
 
 Do not use long-lived `develop` branches by default.
 
-Do not use `release/*` branches unless there is a real stabilization need. In the normal case, release directly from `master`.
+Do not use `release/*` branches unless there is a real stabilization need. In the normal case, release directly from `main`.
 
 ## Recommended Standard for KireiBPM
 
 Unless a repository has a strong reason to differ, use the following standard:
 
-- primary branch: `master`
+- primary branch: `main`
 - working branches: `feature/<issue-number>-<short-description>`, `fix/<issue-number>-<short-description>`
 - work tracking: GitHub Issues
-- release source: `master`
+- release source: `main`
 - merge strategy: `Squash and merge`
 - standard repo tags: `vX.Y.Z`
 - monorepo package tags: `<package-name>@X.Y.Z`
@@ -192,7 +192,8 @@ Unless a repository has a strong reason to differ, use the following standard:
 
 Recommended GitHub settings:
 
-- protect `master`
+- keep the default branch as `main`
+- protect `main`
 - require pull request before merge
 - require required CI checks to pass
 - restrict force-pushes
@@ -206,22 +207,23 @@ Recommended GitHub settings:
 
 1. Create Issue `#120`.
 2. Create `feature/120-rebrand-studio-menu`.
-3. Open a pull request to `master`.
+3. Open a pull request to `main`.
 4. Merge with `Squash and merge`.
 5. The source branch is deleted automatically.
-6. Create release tag `v1.0.4` from `master`.
+6. Create release tag `v1.0.4` from `main`.
 
 ### Example B: fix branch
 
 1. Create Issue `#121`.
 2. Create `fix/121-login-null-pointer`.
 3. Fix and validate.
-4. Merge to `master` with `Squash and merge`.
-5. Create release tag `v1.0.5` from `master`.
+4. Merge to `main` with `Squash and merge`.
+5. Create release tag `v1.0.5` from `main`.
 
 ### Example C: monorepo package release
 
 1. Merge package changes into `master`.
+1. Merge package changes into `main`.
 2. Run the package release workflow manually.
 3. Tag the package as `search-box@1.0.9`.
 4. Publish that package to npm.
@@ -238,11 +240,11 @@ Recommended GitHub settings:
 
 The default KireiBPM model is:
 
-- `master` as the primary branch
+- `main` as the primary branch
 - short-lived `feature/*` and `fix/*` branches with Issue numbers
 - GitHub Issues as the default tracker
 - `Squash and merge` for pull requests
 - automatic deletion of source branches after merge
-- releases and tags created from `master`
+- releases and tags created from `main`
 - one shared `MAJOR.MINOR` platform line
 - independent `PATCH` versioning per repository or package
