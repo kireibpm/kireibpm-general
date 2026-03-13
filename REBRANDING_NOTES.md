@@ -170,3 +170,41 @@ To podejście celowo faworyzuje stabilność builda i kompatybilność Tycho/Ecl
 - Zmiana funkcjonalna: poprawka `tabContainer` (kontrola lazy loading zakładek).
 - Pozostałe zmiany: i18n, workflowy CI, podbicia wersji.
 - W samych POM-ach różnice głównie wersyjne (`1.0.9 -> 1.0.10`), bez dużych zmian zależności runtime.
+
+## 7) Status kolejnej rundy brandingu Studio (2026-03-13)
+
+### Co zostało dopięte
+- Kolejny pass user-facing stringów `Bonita Studio` -> `Kirei Studio` w `kireibpm-studio`:
+   - `bundles/features/studio-feature/feature.xml`
+   - `bundles/features/platform-specific-feature/feature.xml`
+   - `all-in-one/installer/i18n/messages*.properties`
+   - `all-in-one/installer/installer_project_template.xml`
+   - `bundles/plugins/org.bonitasoft.studio.team.git/messages*.properties`
+   - `bundles/plugins/org.bonitasoft.studio.application/plugin.xml`
+   - testy SWTBot oczekujące tytułu głównego okna `Kirei Studio`
+
+### Cleanup legacy katalogów
+- W `kireibpm-ui-designer` usunięto pusty pozostały katalog po starym namespace:
+   - `backend/contract/src/main/java/org/bonitasoft/web/designer/model`
+- Decyzja była świadomie zawężona tylko do pustych, nieużywanych katalogów; aktywne pakiety `org.bonitasoft.*` pozostają tam, gdzie są jeszcze potrzebne kompatybilnościowo.
+
+### Walidacja
+- Edytowane pliki z tej rundy przeszły walidację składniową bez nowych błędów.
+- Pełny build walidacyjny:
+
+```bash
+./mvnw clean package -Pdefault -Pall-in-one
+```
+
+nie przeszedł do etapu weryfikacji brandingu, ponieważ build zatrzymuje się wcześniej na pre-existing zmianie w `bundles/plugins/pom.xml` wskazującej na nieistniejące moduły:
+- `org.kireibpm.engine.bonita-client`
+- `org.kireibpm.engine.bonita-common`
+
+### Co udało się potwierdzić mimo blokera
+- Istniejące artefakty pod `all-in-one/target/products` są już nazwane zgodnie z brandingiem `KireiStudioCommunity`.
+- Oznacza to, że bieżący blocker dotyczy agregacji modułów builda, a nie samego brandingu produktu/artefaktów.
+
+### Następna bezpieczna sekwencja
+1. Rozstrzygnąć pre-existing zmianę w `bundles/plugins/pom.xml`.
+2. Ponowić pełny build `-Pdefault -Pall-in-one`.
+3. Dopiero potem zrobić drugi pass po pozostałych user-facing stringach `Bonita Studio`, które nadal mogą siedzieć w message bundle'ach.

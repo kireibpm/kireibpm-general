@@ -88,3 +88,44 @@ Nie zawiera pełnych, surowych transcriptów starszych czatów spoza dostępnego
 - Potwierdzono stabilność: `yarn test:ci` przechodzi (`120/120 SUCCESS`).
 - Na decyzję użytkownika zatrzymano dalsze podbijanie zależności na obecnym, stabilnym poziomie.
 - Dokument `STAGE2_HARDENING.md` przeniesiono do repo `kireibpm-general` i odnotowano to w `history.md`.
+
+## 2026-03-13 — porządki branchy, publikacja npm i kolejny pass Studio
+
+### 1) Uporządkowanie branchy i publikacji
+- Użytkownik zdecydował o uproszczeniu polityki branchy: bieżące repozytoria mają zostać przy `main`, a stare branche release miały zostać usunięte tam, gdzie nie były już potrzebne.
+- W tym samym ciągu prac dopięto publikację `@kireibpm/js-components` do npm.
+
+### 2) Migracja downstreamów z `bonita-js-components`
+- `kireibpm-ui-designer` i `kireibpm-portal-js` zostały przepięte z `bonita-js-components` na `@kireibpm/js-components`.
+- Dodatkowo w `kireibpm-ui-designer/frontend/package.json` poprawiono pozostałe metadane po forku: opis repozytorium, link `repository`, `bugs` i `homepage` wskazują już na KireiBPM.
+
+### 3) Safe cleanup pozostałości po starej nazwie
+- Zanim ruszył dalszy branding, użytkownik poprosił o sprawdzenie, czy w drzewach źródłowych nie zostały zbędne katalogi po starym namespace.
+- Przeprowadzono audyt zamiast masowego kasowania: większość `org.bonitasoft.*` w monorepo nadal jest aktywna albo potrzebna kompatybilnościowo.
+- Konkretny wskazany katalog w `kireibpm-ui-designer`:
+  - `backend/contract/src/main/java/org/bonitasoft/web/designer/model`
+  okazał się pusty i został usunięty razem z pustymi parentami, po potwierdzeniu że aktywne klasy żyją już pod `org/kireibpm/web/designer/model/...`.
+
+### 4) Kolejny pass rebrandingu `kireibpm-studio`
+- Po cleanupie wykonano następny, ostrożny pass po user-facing stringach `Bonita Studio` -> `Kirei Studio`.
+- Zmieniono m.in.:
+  - opisy feature'ów,
+  - teksty instalatora i ostrzeżenia AV w kilku locale,
+  - template instalatora,
+  - komunikaty pluginu `org.bonitasoft.studio.team.git`,
+  - opis providera w `org.bonitasoft.studio.application`,
+  - oczekiwania testów SWTBot na tytuł głównego okna `Kirei Studio`.
+
+### 5) Walidacja i blocker
+- Edytowane pliki XML/properties/plugin przeszły walidację składniową bez nowych błędów.
+- Próba pełnego builda `./mvnw clean package -Pdefault -Pall-in-one` nie zweryfikowała zmian end-to-end, bo build zatrzymuje się wcześniej na pre-existing zmianie w `bundles/plugins/pom.xml`.
+- Problem: agregator wskazuje na nieistniejące moduły:
+  - `org.kireibpm.engine.bonita-client`
+  - `org.kireibpm.engine.bonita-common`
+- To zostało uznane za stan niezwiązany z bieżącym brandingiem.
+
+### 6) Co mimo to udało się potwierdzić
+- W istniejących artefaktach Studio znalezionych w `all-in-one/target/products` branding jest już spójny:
+  - archiwa mają prefiks `KireiStudioCommunity-...`,
+  - istnieje też `.app` na macOS i `.exe` na Windows z tym samym brandingiem.
+- Ustalono więc, że następny krok to albo domknięcie tego blokera w `bundles/plugins/pom.xml`, albo drugi pass po pozostałych user-facing stringach `Bonita Studio` w message bundle'ach.
